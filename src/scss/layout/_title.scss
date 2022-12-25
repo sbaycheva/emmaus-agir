@@ -1,0 +1,32 @@
+.title {
+    margin: 0;
+    padding: 0;
+
+    &--black {
+        color: var(--color-black);
+    }
+
+    &--white {
+        color: var(--color-white);
+    }
+
+    &--xl {
+        font-size: 72px;
+    }
+
+    &--l {
+        font-size: 48px;
+    }
+
+    &--m {
+        font-size: 36px;
+    }
+
+    &--s {
+        font-size: 24px;
+    }
+
+    &--xs {
+        font-size: 18px;
+    }
+}

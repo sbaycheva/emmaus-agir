@@ -1,1 +1,7 @@
-@import "components/home";
+//Other
+@import "layout/normalize";
+@import "layout/variables";
+@import "layout/title";
+
+//Components
+@import "components/loader";

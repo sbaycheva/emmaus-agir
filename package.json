@@ -11,5 +11,8 @@
     "devDependencies": {
         "sass": "^1.57.1",
         "vite": "^4.0.0"
+    },
+    "dependencies": {
+        "normalize.css": "^8.0.1"
     }
 }
