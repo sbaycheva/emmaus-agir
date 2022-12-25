@@ -1,3 +1,4 @@
-import { sum } from "./helper";
+import { repeatFlowers, repeatFlowersClass } from "./helper";
 
-console.log(sum(2, 2));
+repeatFlowers();
+repeatFlowersClass();
