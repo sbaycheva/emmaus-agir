@@ -1,7 +1,13 @@
+//Plugins
+@import "../../node_modules/locomotive-scroll/dist/locomotive-scroll";
+
 //Other
 @import "layout/normalize";
 @import "layout/variables";
+@import "layout/keyframes";
 @import "layout/title";
+@import "layout/layout";
 
 //Components
 @import "components/loader";
+@import "components/home";

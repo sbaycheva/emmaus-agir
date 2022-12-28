@@ -1,102 +1,28 @@
-@keyframes loaderBgr {
-    0% {
-        background-position-x: 1%;
-    }
-
-    100% {
-        background-position-x: 99%;
-    }
-}
-
-@keyframes loaderSun {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(180deg);
-    }
-}
-
-@keyframes opacity {
-    0% {
-        opacity: 1;
-    }
-
-    45% {
-        opacity: 0;
-    }
-
-    65% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes zoom {
-    0% {
-        transform: scale(1.2);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-@keyframes textFill {
-    0% {
-        background-position: left 0px top 100px;
-    }
-
-    40% {
-        background-position: left 400px top 50px;
-    }
-
-    100% {
-        background-position: left 1000px top 0px;
-    }
-}
-
-@keyframes sunflowerTop {
-    0% {
-        transform: rotateZ(-20deg);
-        left: -5px;
-        bottom: 86%;
-    }
-
-    100% {
-        transform: rotateZ(60deg);
-        left: 22px;
-    }
-}
-
-@keyframes sunflowerBgr {
-    0% {
-        background-position-x: 0;
-    }
-
-    50% {
-        background-position-x: 50px;
-    }
-
-    100% {
-        background-position-x: 0;
-    }
-}
-
 .loader {
     width: 100vw;
     height: 100vh;
     display: flex;
     overflow: hidden;
     position: relative;
+    z-index: 99;
+    transition: 0.5s ease-out;
+
+    //Remove when deploy
+    // display: none;
+    &:after {
+        content: "";
+        background: url("/images/noise.png") repeat;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
     &__bgr {
         width: 100%;
         height: 100%;
-        background: url("../../images/loader-bgr.svg") repeat-y;
+        background: url("/images/loader-bgr.svg") repeat-y;
         background-position: center;
         background-position-x: 1%;
         background-size: 1400%;
@@ -140,17 +66,17 @@
         left: -15vw;
         top: 20vw;
         border-radius: 100%;
-        z-index: 2;
+        z-index: 3;
         &:before {
             content: "";
             width: 70px;
             height: 70px;
-            background: #e2d6aa;
+            background: var(--color-yellow);
             border-radius: 100%;
             position: absolute;
             left: 0;
             top: calc(50% - 70px);
-            box-shadow: 0 0 20px 10px #e2d6aa;
+            box-shadow: 0 0 20px 10px var(--color-yellow);
         }
     }
 
@@ -159,12 +85,13 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background-image: url("../../images/water.svg");
+        background-image: url("/images/water.svg");
         background-repeat: repeat-x;
         background-size: 30%;
         color: transparent;
         -webkit-text-stroke: 1px #fff;
         -webkit-background-clip: text;
+        z-index: 4;
         animation: textFill 5s linear forwards;
     }
 
@@ -177,13 +104,13 @@
             content: "";
             width: 100%;
             height: 60px;
-            background: url("../../images/flowers-bgr-2.svg") repeat-x;
+            background: url("/images/flowers-bgr-2.svg") repeat-x;
             position: absolute;
             background-position-y: top;
             background-position-x: 0;
             left: 0;
             bottom: 0;
-            z-index: 1;
+            z-index: 2;
             background-size: 50px;
             animation: sunflowerBgr 10s ease-in-out infinite;
         }
@@ -192,13 +119,13 @@
             content: "";
             width: 180%;
             height: 30px;
-            background: url("../../images/flowers-bgr-1.svg") repeat-x;
+            background: url("/images/flowers-bgr-1.svg") repeat-x;
             position: absolute;
             background-position-y: top;
             background-position-x: 0;
             left: 0;
             bottom: 0;
-            z-index: 2;
+            z-index: 3;
             background-size: 120px;
             animation: sunflowerBgr 8s ease-in-out infinite;
         }
@@ -207,7 +134,7 @@
     &__bottom-el {
         position: relative;
         width: 130px;
-        z-index: 3;
+        z-index: 4;
 
         &.xl {
             transform: scale(1.8);
@@ -225,19 +152,19 @@
     .sun-top {
         width: 100px;
         height: 50px;
-        background: url("../../images/sunflower-top.svg") no-repeat center center;
+        background: url("/images/sunflower-top.svg") no-repeat center center;
         transform-origin: center center;
         animation: sunflowerTop 2s linear 1s forwards;
         position: absolute;
-        transform: rotateZ(-20deg);
-        left: -5px;
+        transform: rotateZ(-30deg);
+        left: 2px;
         bottom: 86%;
-        z-index: 2;
+        z-index: 3;
     }
 
     .sun-bottom {
         width: 130px;
         height: 120px;
-        background: url("../../images/sunflower-bottom.svg") no-repeat center center;
+        background: url("/images/sunflower-bottom.svg") no-repeat center center;
     }
 }
